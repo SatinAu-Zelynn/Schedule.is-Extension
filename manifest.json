@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Schedule.is - ClassIsland 大屏联动",
+  "version": "0.0.1",
+  "description": "在 Time.is 时钟大屏上无缝显示 ClassIsland 实时课表、当前科目与倒计时",
+  "icons": { "256": "logo.png" },
+  "host_permissions": [
+    "http://127.0.0.1:23850/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://time.is/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

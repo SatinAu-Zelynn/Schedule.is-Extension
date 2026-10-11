@@ -1,0 +1,93 @@
+#schedule-is-hud {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999999;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+  user-select: none;
+  pointer-events: none;
+}
+
+.sis-card {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: rgba(18, 20, 26, 0.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 40px;
+  padding: 14px 34px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+.sis-status-pill {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.sis-in-class {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.4);
+}
+
+.sis-breaking {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.4);
+}
+
+.sis-idle {
+  background: rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+}
+
+.sis-offline {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.sis-info {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.sis-current-wrap, .sis-timer-wrap, .sis-next-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.sis-label, .sis-timer-label {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 2px;
+}
+
+.sis-subject {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.sis-timer {
+  font-size: 24px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #38bdf8;
+}
+
+.sis-next {
+  font-size: 20px;
+  font-weight: 500;
+  color: #cbd5e1;
+}
