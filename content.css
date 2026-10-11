@@ -1,27 +1,74 @@
 #schedule-is-hud {
   position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 9999999;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
   user-select: none;
   pointer-events: none;
+  --sis-scale: 1;
+  transition: transform 0.2s ease;
+}
+
+/* 位置预设 */
+#schedule-is-hud.pos-bottom-center {
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) scale(var(--sis-scale));
+  transform-origin: bottom center;
+}
+
+#schedule-is-hud.pos-top-center {
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%) scale(var(--sis-scale));
+  transform-origin: top center;
+}
+
+#schedule-is-hud.pos-bottom-left {
+  bottom: 40px;
+  left: 40px;
+  transform: scale(var(--sis-scale));
+  transform-origin: bottom left;
+}
+
+#schedule-is-hud.pos-bottom-right {
+  bottom: 40px;
+  right: 40px;
+  transform: scale(var(--sis-scale));
+  transform-origin: bottom right;
+}
+
+#schedule-is-hud.pos-top-left {
+  top: 40px;
+  left: 40px;
+  transform: scale(var(--sis-scale));
+  transform-origin: top left;
+}
+
+#schedule-is-hud.pos-top-right {
+  top: 40px;
+  right: 40px;
+  transform: scale(var(--sis-scale));
+  transform-origin: top right;
 }
 
 .sis-card {
   pointer-events: auto;
   display: flex;
-  align-items: center;
-  gap: 28px;
+  flex-direction: column;
   background: rgba(18, 20, 26, 0.75);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 40px;
-  padding: 14px 34px;
+  border-radius: 36px;
+  padding: 14px 30px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
   color: #ffffff;
+}
+
+.sis-main-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
 }
 
 .sis-status-pill {
@@ -90,4 +137,103 @@
   font-size: 20px;
   font-weight: 500;
   color: #cbd5e1;
+}
+
+/* 进度条 */
+.sis-progress-wrap {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.sis-progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.sis-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  transition: width 0.4s ease;
+}
+
+/* 完整课表横向排列条 */
+.sis-schedule-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sis-schedule-item {
+  font-size: 13px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+}
+
+.sis-schedule-item.active {
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.sis-schedule-index {
+  opacity: 0.6;
+  margin-right: 3px;
+}
+
+/* 浅色模式 (黑白设置) */
+#schedule-is-hud.sis-light .sis-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  color: #1e293b;
+}
+
+#schedule-is-hud.sis-light .sis-subject {
+  color: #0f172a;
+}
+
+#schedule-is-hud.sis-light .sis-label,
+#schedule-is-hud.sis-light .sis-timer-label {
+  color: #64748b;
+}
+
+#schedule-is-hud.sis-light .sis-next {
+  color: #475569;
+}
+
+#schedule-is-hud.sis-light .sis-timer {
+  color: #0284c7;
+}
+
+#schedule-is-hud.sis-light .sis-idle {
+  background: rgba(0, 0, 0, 0.08);
+  color: #475569;
+}
+
+#schedule-is-hud.sis-light .sis-progress-bar {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+#schedule-is-hud.sis-light .sis-schedule-list {
+  border-top-color: rgba(0, 0, 0, 0.06);
+}
+
+#schedule-is-hud.sis-light .sis-schedule-item {
+  background: rgba(0, 0, 0, 0.06);
+  color: #475569;
+}
+
+#schedule-is-hud.sis-light .sis-schedule-item.active {
+  background: #0284c7;
+  color: #ffffff;
 }
