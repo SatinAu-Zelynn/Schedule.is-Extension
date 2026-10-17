@@ -35,7 +35,7 @@
 
 ### 方式一：从官方商店安装（推荐）
 
-暂未发布
+- **Microsoft Edge 扩展商店**：[立即前往安装 Schedule.is - ClassIsland 大屏联动](https://microsoftedge.microsoft.com/addons/detail/scheduleis-classisland/clplbhhdhncpiampkccpceaibegeibdp)
 
 ### 方式二：CRX 安装
 
